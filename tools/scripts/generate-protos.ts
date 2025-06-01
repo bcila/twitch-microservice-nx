@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const PROTO_SRC = path.resolve(__dirname, '../../libs/protos/src/proto');
-const OUT_DIR = path.resolve(__dirname, '../../libs/protos/generated');
+const OUT_DIR = path.resolve(__dirname, '../../libs/protos/src/generated');
 
 // If the output directory does not exist, create it
 if (!fs.existsSync(OUT_DIR)) {
