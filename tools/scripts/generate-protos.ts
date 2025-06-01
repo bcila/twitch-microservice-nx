@@ -10,7 +10,7 @@ if (!fs.existsSync(OUT_DIR)) {
   fs.mkdirSync(OUT_DIR, { recursive: true });
 }
 
-// Get all .proto files recursively from the source directory
+// Get
 function getAllProtoFiles(dir: string): string[] {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
 
@@ -25,7 +25,10 @@ function getAllProtoFiles(dir: string): string[] {
 const files = getAllProtoFiles(PROTO_SRC);
 
 files.forEach((protoFile) => {
-  console.log(`🔨 Generating from: ${protoFile}`);
+
+  const proto = protoFile.split('/');
+  const protoName = proto[proto.length - 1];
+  console.log(`🔨 Generating from: ${protoName}`);
 
   execSync(
     `npx protoc \
