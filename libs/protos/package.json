@@ -10,6 +10,21 @@
       "import": "./src/index.ts",
       "default": "./src/index.ts"
     },
+    "./generated/auth": {
+      "types": "./src/generated/auth.ts",
+      "import": "./src/generated/auth.ts",
+      "default": "./src/generated/auth.ts"
+    },
+    "./generated/stream": {
+      "types": "./src/generated/stream.ts",
+      "import": "./src/generated/stream.ts",
+      "default": "./src/generated/stream.ts"
+    },
+    "./generated/user": {
+      "types": "./src/generated/user.ts",
+      "import": "./src/generated/user.ts",
+      "default": "./src/generated/user.ts"
+    },
     "./package.json": "./package.json"
   },
   "dependencies": {}
