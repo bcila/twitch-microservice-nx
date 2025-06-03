@@ -1,0 +1,26 @@
+{
+  "name": "@twitch-microservice-nx/stream-service-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@twitch-microservice-nx/stream-service"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/stream-service-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@twitch-microservice-nx/stream-service:build",
+          "@twitch-microservice-nx/stream-service:serve"
+        ]
+      }
+    }
+  }
+}

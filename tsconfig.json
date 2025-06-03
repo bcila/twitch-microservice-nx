@@ -23,6 +23,12 @@
     },
     {
       "path": "./apps/user-service"
+    },
+    {
+      "path": "./apps/stream-service-e2e"
+    },
+    {
+      "path": "./apps/stream-service"
     }
   ]
 }

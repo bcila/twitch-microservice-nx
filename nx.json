@@ -1,10 +1,7 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
@@ -15,9 +12,7 @@
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/test-setup.[jt]s"
     ],
-    "sharedGlobals": [
-      "{workspaceRoot}/.github/workflows/ci.yml"
-    ]
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
   "nxCloudId": "683c9e4fef8d125166e48fad",
   "plugins": [
@@ -34,9 +29,7 @@
           "watchDepsName": "watch-deps"
         }
       },
-      "exclude": [
-        "libs/protos/*"
-      ]
+      "exclude": ["libs/protos/*"]
     },
     {
       "plugin": "@nx/webpack/plugin",
@@ -62,14 +55,13 @@
       "exclude": [
         "apps/gateway-e2e/**/*",
         "apps/auth-service-e2e/**/*",
-        "apps/user-service-e2e/**/*"
+        "apps/user-service-e2e/**/*",
+        "apps/stream-service-e2e/**/*"
       ]
     },
     {
       "plugin": "@nx/js/typescript",
-      "include": [
-        "libs/protos/*"
-      ],
+      "include": ["libs/protos/*"],
       "options": {
         "typecheck": {
           "targetName": "typecheck"
@@ -79,9 +71,7 @@
   ],
   "targetDefaults": {
     "test": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"]
     }
   }
 }
