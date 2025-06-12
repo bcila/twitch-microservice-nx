@@ -2,30 +2,44 @@
   "name": "@twitch-microservice-nx/protos",
   "version": "0.0.1",
   "private": true,
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "copy-protos": "mkdir -p dist/proto && find src -name '*.proto' -exec cp {} dist/proto \\;",
+    "generate-protos": "ts-node ../../tools/scripts/generate-protos.ts"
+  },
   "exports": {
+    "./package.json": "./package.json",
     ".": {
-      "types": "./src/index.ts",
-      "import": "./src/index.ts",
-      "default": "./src/index.ts"
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     },
     "./generated/auth": {
-      "types": "./src/generated/auth.ts",
-      "import": "./src/generated/auth.ts",
-      "default": "./src/generated/auth.ts"
+      "development": "./src/generated/auth/index.ts",
+      "types": "./dist/generated/auth/index.d.ts",
+      "import": "./dist/generated/auth/index.js",
+      "default": "./dist/generated/auth/index.js"
     },
     "./generated/stream": {
-      "types": "./src/generated/stream.ts",
-      "import": "./src/generated/stream.ts",
-      "default": "./src/generated/stream.ts"
+      "development": "./src/generated/stream/index.ts",
+      "types": "./dist/generated/stream/index.d.ts",
+      "import": "./dist/generated/stream/index.js",
+      "default": "./dist/generated/stream/index.js"
     },
     "./generated/user": {
-      "types": "./src/generated/user.ts",
-      "import": "./src/generated/user.ts",
-      "default": "./src/generated/user.ts"
-    },
-    "./package.json": "./package.json"
+      "development": "./src/generated/user/index.ts",
+      "types": "./dist/generated/user/index.d.ts",
+      "import": "./dist/generated/user/index.js",
+      "default": "./dist/generated/user/index.js"
+    }
   },
-  "dependencies": {}
+  "nx": {
+    "name": "protos"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
 }

@@ -2,10 +2,12 @@
   "compilerOptions": {
     "composite": true,
     "declarationMap": true,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "importHelpers": true,
     "isolatedModules": true,
-    "lib": ["es2022"],
+    "lib": [
+      "es2022"
+    ],
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "noEmitOnError": true,
@@ -16,12 +18,22 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["development"],
+    "customConditions": [
+      "development"
+    ],
     "baseUrl": ".",
     "paths": {
-      "@protos/auth": ["libs/protos/src/generated/auth"],
-      "@protos/stream": ["libs/protos/src/generated/stream"],
-      "@protos/user": ["libs/protos/src/generated/user"]
+      "@twitch-monorepo-nx/protos": [
+        "libs/protos/src/index.ts"
+      ],
+      "@twitch-monorepo-nx/protos/generated/*": [
+        "libs/protos/src/generated/*"
+      ]
     }
-  }
+  },
+  "references": [
+    {
+      "path": "libs/protos/tsconfig.lib.json"
+    }
+  ]
 }

@@ -28,8 +28,7 @@
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
         }
-      },
-      "exclude": ["libs/protos/*"]
+      }
     },
     {
       "plugin": "@nx/webpack/plugin",
@@ -66,12 +65,17 @@
         "typecheck": {
           "targetName": "typecheck"
         }
-      }
+      },
+      "exclude": ["libs/protos/*"]
     }
   ],
   "targetDefaults": {
-    "test": {
-      "dependsOn": ["^build"]
+    "build": {
+      "dependsOn": ["^build", "generate-protos", "copy-protos"],
+      "inputs": ["production", "^production"]
     }
+  },
+  "sync": {
+    "applyChanges": true
   }
 }

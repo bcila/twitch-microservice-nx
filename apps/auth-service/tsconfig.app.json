@@ -9,7 +9,7 @@
     "emitDecoratorMetadata": true,
     "target": "es2021"
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*", "../../libs/protos/src/generated/**/*"],
   "exclude": [
     "out-tsc",
     "dist",
@@ -19,5 +19,10 @@
     "eslint.config.js",
     "eslint.config.cjs",
     "eslint.config.mjs"
+  ],
+  "references": [
+    {
+      "path": "../../libs/protos/tsconfig.lib.json"
+    }
   ]
 }

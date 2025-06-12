@@ -10,9 +10,6 @@
       "path": "./apps/gateway"
     },
     {
-      "path": "./libs/protos"
-    },
-    {
       "path": "./apps/auth-service-e2e"
     },
     {
@@ -29,6 +26,9 @@
     },
     {
       "path": "./apps/stream-service"
+    },
+    {
+      "path": "./libs/protos"
     }
   ]
 }
